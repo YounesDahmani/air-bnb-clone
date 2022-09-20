@@ -1,0 +1,20 @@
+.navbar {
+  .navbar-container {
+    display: flex;
+    justify-content: space-between;
+    padding: 30px 0;
+    width: 85%;
+    margin: 0 auto;
+  }
+  .logo-desktop {
+    img {
+      width: 110px;
+    }
+  }
+  .search-features {
+    display: flex;
+  }
+  .user-features {
+    display: flex;
+  }
+}
