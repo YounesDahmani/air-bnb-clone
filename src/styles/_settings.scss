@@ -1,3 +1,12 @@
+@font-face {
+  font-family: "font-1";
+  src: url(../assets/fonts/CircularStd-Medium.otf);
+}
+@font-face {
+  font-family: "font-2";
+  src: url(../assets/fonts/CircularStd-Bold.otf);
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -6,4 +15,17 @@
   outline: none;
   border: none;
   text-decoration: none;
+}
+
+///////////// FONTS /////////////////////
+
+$font-1: "font-1", sans-serif;
+$font-2: "font-2", sans-serif;
+
+a {
+  cursor: pointer;
+}
+
+body {
+  font-family: $font-1;
 }

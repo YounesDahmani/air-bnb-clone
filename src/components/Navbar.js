@@ -14,7 +14,9 @@ const Navbar = () => {
           <a href="https://www.google.com" className="hote-btn">
             Devenez hôte
           </a>
-          <LanguageIcon />
+          <div className="language-icon">
+            <LanguageIcon />
+          </div>
           <div className="user-account-btn">
             <MenuIcon />
             <AccountCircleIcon />
