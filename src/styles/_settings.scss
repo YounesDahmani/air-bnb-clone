@@ -29,3 +29,25 @@ a {
 body {
   font-family: $font-1;
 }
+
+////////////////// MIXINS ///////////////////////
+
+@mixin flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin separator-navbar {
+  position: relative;
+  &::after {
+    position: absolute;
+    content: "";
+    background: #dfdfdf;
+    right: 0px;
+    top: 50%;
+    width: 1px;
+    height: 80%;
+    transform: translateY(-50%);
+  }
+}
