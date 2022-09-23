@@ -1,15 +1,24 @@
 .navbar {
+  border-bottom: 1px solid #eeeeee;
+  position: fixed;
+  width: 100%;
+  z-index: 1;
+  transition: all 0.3s ease;
+  &.active {
+    padding-bottom: 100px;
+  }
   .navbar-container {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 30px 0;
+    padding: 15px 0;
     width: 90%;
     margin: 0 auto;
   }
   .logo-desktop {
     img {
       width: 110px;
+      cursor: pointer;
     }
   }
   .search-features {
@@ -17,6 +26,19 @@
     align-items: center;
     justify-content: space-around;
     font-size: 14px;
+    cursor: pointer;
+    border: 1px solid #dddddd;
+    padding-left: 10px;
+    border-radius: 40px;
+    min-width: 20%;
+    transition: box-shadow 0.2s ease;
+    margin-left: 15px;
+    &.active {
+      display: none;
+    }
+    &:hover {
+      box-shadow: 0 1px 2px rgba(0, 0, 0, 0.08), 0 4px 12px rgba(0, 0, 0, 0.05);
+    }
     div {
       padding: 10px;
     }
@@ -30,12 +52,25 @@
       @include flex-center;
       span {
         padding-right: 10px;
+        font-family: $font-0;
+        color: #717171;
+      }
+      .icon-search {
+        @include flex-center;
+        color: white;
+        background: #ff385c;
+        width: 35px;
+        height: 35px;
+        border-radius: 50%;
+        svg {
+          width: 20px;
+        }
       }
     }
   }
   .user-features {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
     a,
     a:visited {
@@ -43,6 +78,7 @@
       color: #222222;
       font-family: $font-2;
       font-size: 14px;
+
       &:hover {
         background: #f7f7f7;
         border-radius: 30px;
@@ -51,6 +87,7 @@
     .language-icon {
       @include flex-center;
       padding: 10px;
+      cursor: pointer;
       svg {
         width: 80%;
       }
@@ -62,8 +99,10 @@
     .user-account-btn {
       @include flex-center;
       padding: 6px;
+      margin-left: 10px;
       border: 1px solid #7171715f;
       border-radius: 30px;
+      cursor: pointer;
       :nth-last-child(2) {
         margin-right: 10px;
         width: 20px;
