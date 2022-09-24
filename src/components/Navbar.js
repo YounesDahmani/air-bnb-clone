@@ -6,7 +6,7 @@ import SearchIcon from "@mui/icons-material/Search";
 const Navbar = () => {
   const [isShown, setIsShown] = useState(false);
 
-  const handleClick = () => {
+  const handleClick = ({ isShown }) => {
     setIsShown((isShown) => !isShown);
   };
   let toggleClassCheck = isShown ? " active" : "";
