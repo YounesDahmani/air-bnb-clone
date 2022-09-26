@@ -1,12 +1,13 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import LanguageIcon from "@mui/icons-material/Language";
 import MenuIcon from "@mui/icons-material/Menu";
 import AccountCircleIcon from "@mui/icons-material/AccountCircle";
 import SearchIcon from "@mui/icons-material/Search";
+
 const Navbar = () => {
   const [isShown, setIsShown] = useState(false);
 
-  const handleClick = ({ isShown }) => {
+  const handleClick = () => {
     setIsShown((isShown) => !isShown);
   };
   let toggleClassCheck = isShown ? " active" : "";
