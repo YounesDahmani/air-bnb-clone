@@ -4,49 +4,16 @@ import MenuIcon from "@mui/icons-material/Menu";
 import AccountCircleIcon from "@mui/icons-material/AccountCircle";
 import SearchIcon from "@mui/icons-material/Search";
 
-const Navbar = (id) => {
-  const useOutsideClick = (callback) => {
-    const ref = React.useRef();
-
-    React.useEffect(() => {
-      const handleClick = (event) => {
-        if (ref.current && !ref.current.contains(event.target)) {
-          callback();
-        }
-      };
-
-      document.addEventListener("click", handleClick, true);
-
-      return () => {
-        document.removeEventListener("click", handleClick, true);
-      };
-    }, [ref]);
-
-    return ref;
-  };
-
+const Navbar = () => {
   const [isShown, setIsShown] = useState(false);
-
-  const handleClickOutside = () => {
-    console.log("c'est dehoooors");
-  };
-
-  const ref = useOutsideClick(handleClickOutside);
-
   const handleClick = () => {
     setIsShown((isShown) => !isShown);
-  };
-
-  const handleHeaderClick = (event) => {
-    // do something
-
-    event.stopPropagation();
   };
 
   let toggleClassCheck = isShown ? " active" : "";
 
   return (
-    <div className={`navbar${toggleClassCheck}`} onClick={handleHeaderClick}>
+    <div className={`navbar${toggleClassCheck}`}>
       <div className="navbar-container">
         <div className="logo-desktop">
           <img src="../assets/img/air-bnb-logo.png" alt="Logo Airbnb" />
@@ -87,6 +54,7 @@ const Navbar = (id) => {
           </div>
         </div>
       </div>
+      {isShown && <div className="close" onClick={handleClick}></div>}
     </div>
   );
 };
