@@ -3,8 +3,10 @@ import LanguageIcon from "@mui/icons-material/Language";
 import MenuIcon from "@mui/icons-material/Menu";
 import AccountCircleIcon from "@mui/icons-material/AccountCircle";
 import SearchIcon from "@mui/icons-material/Search";
+import SearchBar from "./SearchBar";
 
 const Navbar = () => {
+  // For the location show bar.
   const [isShown, setIsShown] = useState(false);
   const handleClick = () => {
     setIsShown((isShown) => !isShown);
@@ -16,17 +18,18 @@ const Navbar = () => {
     <div className={`navbar${toggleClassCheck}`}>
       <div className="navbar-container">
         <div className="logo-desktop">
-          <img src="../assets/img/air-bnb-logo.png" alt="Logo Airbnb" />
+          <img src="../assets/img/logo.svg" alt="Logo Airbnb" />
         </div>
 
         {/* Middle feature  */}
         {isShown && (
-          <div>
+          <div className="show-location">
             <ul>
-              <li>Logements</li>
+              <li className="logement">Logements</li>
               <li>Expériences</li>
               <li>Expériences en ligne</li>
             </ul>
+            <SearchBar />
           </div>
         )}
         <div className={`search-features${toggleClassCheck}`}>

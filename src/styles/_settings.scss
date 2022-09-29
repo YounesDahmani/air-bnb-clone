@@ -10,6 +10,10 @@
   font-family: "font-2";
   src: url(../assets/fonts/CircularStd-Bold.otf);
 }
+@font-face {
+  font-family: "font-light";
+  src: url(../assets/fonts/CircularStd-Light.otf);
+}
 
 * {
   margin: 0;
@@ -26,6 +30,7 @@
 $font-0: "font-0", sans-serif;
 $font-1: "font-1", sans-serif;
 $font-2: "font-2", sans-serif;
+$font-light: "font-light", sans-serif;
 
 a {
   cursor: pointer;
